@@ -1,6 +1,6 @@
 /*
 * Author : Krzysztof Kowalski
-* k.kowalski@wisniowski.pl
+* k.kowalski78@icloud.com
 * @ 21 Nov 2025
 */
 /*Ustawianie koloru tla dla kolumny STAN sprawy */
@@ -54,4 +54,5 @@ li[data-target-selection-name="sfdc:QuickAction.Contact.New_DOS_Export_case"] bu
 /*wiersz z zalacznikiem → dodanie koloru do wiadomosci mail*/
 .slds-attachments{
   background-color: #4bfd0496 !important;
+
 }
