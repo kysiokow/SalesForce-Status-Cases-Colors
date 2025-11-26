@@ -1,0 +1,57 @@
+/*
+* Author : Krzysztof Kowalski
+* k.kowalski@wisniowski.pl
+* @ 21 Nov 2025
+*/
+/*Ustawianie koloru tla dla kolumny STAN sprawy */
+span[title="Pending response"] {
+    background-color: rgba(2, 88, 249, 0.495) !important;
+} 
+span[title="Response received"] {
+    background-color: rgba(192, 137, 10, 0.534) !important;
+}
+span[title="Reopen"] {
+    background-color: rgba(229, 250, 5, 0.547) !important;
+}
+span[title="In progress"] {
+    background-color: rgba(5, 250, 119, 0.571) !important;
+}
+span[title="Request accepted"] {
+    background-color: rgba(225, 5, 250, 0.467) !important;
+}
+span[title="Completed"] {
+    background-color: rgba(67, 67, 69, 0.467) !important;
+}
+/*Sekcja obsługi maila, przekaż, odpisz wszystkim , odpisz */
+a[title="Odpowiedz wszystkim"]{
+  background-color: rgba(50, 6, 243, 0.199) !important;
+  font-weight: bold;
+}
+a[title="Répondre"]{
+  background-color: rgb(50, 6, 243, 0.199) !important;
+  font-weight: bold;
+}
+a[title="Usuń"]{
+  background-color: rgba(50, 6, 243, 0.199) !important;
+  font-weight: bold;
+}
+a[title="Przekaż"]{
+  background-color: rgba(50, 6, 243, 0.199) !important;
+  font-weight: bold;
+}
+button[title="Napisz wiadomość email..."]{
+  background-color: rgba(50, 6, 243, 0.199) !important;
+ font-weight: bold;
+}
+/*Nowa sprawa DES EXPORT - karta otwarta przez 3CX
+podswietlenie elementu NOWA SPRAWADOS EXPORT */
+
+li[data-target-selection-name="sfdc:QuickAction.Contact.New_DOS_Export_case"] button[name="Contact.New_DOS_Export_case"] {
+    color: red !important;
+    font-weight: bold;
+    background-color: rgba(50, 6, 243, 0.199) !important;
+}
+/*wiersz z zalacznikiem → dodanie koloru do wiadomosci mail*/
+.slds-attachments{
+  background-color: #4bfd0496 !important;
+}
