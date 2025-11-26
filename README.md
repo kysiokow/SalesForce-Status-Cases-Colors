@@ -30,5 +30,6 @@ The extension does not execute scripts that access sensitive information. It onl
 Third-Party Services
 No third-party services are used.
 Contact
+
 If you have any questions about this policy, please contact:
 Email: k.kowalski78@icloud.com
