@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "SALES Force THEME",
+  "version": "1.0.2",
+  "description": "Changes the color of case statuses in Salesforce. A simple visual overlay – works only on Salesforce pages",
+  "author": {
+    "name": "Krzysztof Kowalski",
+    "email": "k.kowalski78@icloud.com"
+  },
+  "icons": {
+    "16": "logo/logo_16.png",
+    "24": "logo/logo_24.png",
+    "36": "logo/logo_36.png",
+    "48": "logo/logo_48.png",
+    "64": "logo/logo_64.png",
+    "128": "logo/logo_128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.lightning.force.com/*",
+        "https://*.force.com/*"
+      ],
+      "css": [
+        "css/styles.css",
+        "css/stylesFR.css"
+      ]
+    }
+  ]
+}

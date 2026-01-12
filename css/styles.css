@@ -1,0 +1,78 @@
+/*
+* Author : Krzysztof Kowalski
+* k.kowalski78@icloud.com
+* @ 12 Jan 2026
+*/
+/*Ustawianie koloru tla dla kolumny STAN sprawy */
+span[title="Oczekiwanie na odpowiedź"] {
+    background-color: rgba(2, 88, 249, 0.495) !important;
+    border-radius: 8px;
+} 
+span[title="Odpowiedź otrzymana"] {
+    background-color: rgba(192, 137, 10, 0.534) !important;
+    border-radius: 8px;
+}
+span[title="Otwarta ponownie"] {
+    background-color: rgba(229, 250, 5, 0.547) !important;
+    border-radius: 8px;
+}
+span[title="W trakcie realizacji"] {
+    background-color: rgba(5, 250, 119, 0.571) !important;
+    border-radius: 8px;
+}
+span[title="Zgłoszenie przyjęte"] {
+    background-color: rgba(225, 5, 250, 0.467) !important;
+    border-radius: 8px;
+}
+span[title="Zakończona"] {
+    background-color: rgba(67, 67, 69, 0.467) !important;
+    border-radius: 8px;
+}
+/*Sekcja obsługi maila, przekaż, odpisz wszystkim , odpisz */
+a[title="Odpowiedz wszystkim"]{
+  background-color: rgba(50, 6, 243, 0.199) !important;
+  font-weight: bold;
+  border-radius: 8px;
+}
+a[title="Odpowiedz"]{
+  background-color: rgb(50, 6, 243, 0.199) !important;
+  font-weight: bold;
+  border-radius: 8px;
+}
+a[title="Usuń"]{
+  background-color: rgba(50, 6, 243, 0.199) !important;
+  font-weight: bold;
+  border-radius: 8px;
+}
+a[title="Przekaż"]{
+  background-color: rgba(50, 6, 243, 0.199) !important;
+  font-weight: bold;
+  border-radius: 8px;
+}
+button[title="Napisz wiadomość email..."]{
+  background-color: rgba(50, 6, 243, 0.199) !important;
+ font-weight: bold;
+ border-radius: 8px;
+}
+/*Nowa sprawa DES EXPORT - karta otwarta przez 3CX
+podswietlenie elementu NOWA SPRAWADOS EXPORT */
+
+li[data-target-selection-name="sfdc:QuickAction.Contact.New_DOS_Export_case"] button[name="Contact.New_DOS_Export_case"] {
+    color: red !important;
+    font-weight: bold;
+    background-color: rgba(50, 6, 243, 0.199) !important;
+    border-radius: 8px;
+}
+/*wiersz z zalacznikiem → dodanie koloru do wiadomosci mail*/
+.slds-attachments{
+  background-color: #4bfd0496 !important;
+}
+/* Tabele i wiersze nadpisane*/
+.slds-th__action {
+  background : rgb(187, 150, 247) !important
+}
+
+.slds-table tbody tr, .slds-table tbody th, .slds-table tbody td, th, td{
+  background: rgb(235, 247, 206) !important;
+  }
+/* Tabele i wiersze nadpisane */
