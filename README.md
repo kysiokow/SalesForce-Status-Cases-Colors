@@ -1,4 +1,4 @@
-# SalesForce-Status-Cases-Colors v 1.0.1
+# SalesForce-Status-Cases-Colors 
 json & css  Chrome extension to colorize case statuses in Sales Force Lightning
 
 
