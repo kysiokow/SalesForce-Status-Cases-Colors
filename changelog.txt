@@ -2,6 +2,9 @@ Salesforce Theme
 SFTheme: Highlights case statuses in Sales Force Lightning with colors.
 It is based on CSS code and does not interfere with internal system settings or download/upload any data.
 
+## 1.0.3
+ - Added pulsing icons:email and text posts in the “All Updates” block
+
 ## 1.0.2
 - Added SF icon - to be displayed on the Chrome extension bar.
 - Added colors for overwritten tables and rows
