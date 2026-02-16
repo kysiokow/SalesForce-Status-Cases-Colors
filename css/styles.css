@@ -1,0 +1,135 @@
+/* Base styles; user colors will override with !important in contentScript */
+span[title], a[title], button[title]{ border-radius:8px }
+
+/* kolor sekcji komentarze sprawy, to po prawej stronie*/
+li.tableRowGroup {
+  background-color: rgb(140, 251, 214);
+  font-weight: bold;
+}
+
+/*Nowa sprawa DOS EXPORT - karta otwarta przez 3CX
+podswietlenie elementu NOWA SPRAWADOS EXPORT */
+
+li[data-target-selection-name="sfdc:QuickAction.Contact.New_DOS_Export_case"] button[name="Contact.New_DOS_Export_case"] {
+    color: red !important;
+    font-weight: bold;
+    background-color: rgba(50, 6, 243, 0.199) !important;
+    border-radius: 8px;
+}
+
+/* Tabele i wiersze nadpisane*/
+.slds-th__action {
+  background : rgb(187, 150, 247) !important
+}
+
+.slds-table tbody tr, .slds-table tbody th, .slds-table tbody td, th, td{
+  background: rgb(235, 247, 206) !important;
+  }
+/* Tabele i wiersze nadpisane */
+/* PULSOWANIE IKONKI ROZWIJANIA PODSPRAW*/
+.slds-button.slds-button_icon.slds-m-right_x-small { 
+  animation: pulse 1.2s infinite ease-in-out; 
+} 
+.slds-button.slds-button_icon.slds-m-right_x-small svg {
+   fill: currentColor; 
+  }
+ @keyframes pulse { 
+  0% { 
+    transform: scale(0.75); 
+    color: #ff0000; 
+  }
+   50% {
+     transform: scale(1.5);
+      color: #043eff; 
+    } 
+    100% {
+       transform: scale(0.75); 
+       color: #ff0000; } 
+      }
+
+ /*START PULSOWANIA IKONY MAIL
+  Ikona EMAIL będzie pulsować tłem i wracać do oryginalnego tła (transparent) */
+.slds-icon-standard-email {
+    /* animacja tła */
+    animation: pulseBg 4s ease-in-out infinite;
+    /* płynniejsze przejścia kolorów w innych stanach (hover/focus itp.) */
+    transition: background-color 2s ease, fill 2s ease, color 2s ease, opacity 0.2s ease;
+
+    /* Uwaga: lightning-icon (SVG) bywa inline; poniższe pomaga, by tło było widoczne */
+    display: inline-flex;        /* by background obejmował „ramkę” ikony */
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;          /* ładniejsze zaokrąglenie tła wokół ikony */
+    padding: 2px 4px;            /* odrobina „oddechu”, żeby tło było widoczne */
+}
+
+/* Kluczowe klatki – start i koniec takie same (wraca do oryginalnego tła) */
+@keyframes pulseBg {
+    0% {
+        background-color: rgb(67, 67, 69,);                  /* ORYGINALNE TŁO */
+    }
+    50% {
+        background-color: rgb(170, 4, 253);        /* kolor pulsujący (zielony) */
+    }
+    100% {
+        background-color: rgb(67, 67, 69,);                  /* powrót do oryginału */
+    }
+}
+/* KONIEC PULSOWANIA IKONY MAIL*/
+/* PULSOWANIE IKONKI OPUBLIKUJ, CHATER bloku Wszystkie Aktualizacjie*/
+.slds-icon-standard-post {
+   /* background-color: rgb(0, 200, 83) !important; Mozna dodac lub zmienic kolor ikonki*/
+    animation: blink 2s infinite;
+}
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.15; }
+    100% { opacity: 1; }
+}
+/*KONIEC PULSOWANIA IKONKI OPUBLIKUJ*/
+
+/*wiersz z zalacznikiem → dodanie koloru do wiadomosci mail */
+/*.slds-attachments{
+  background-color: #4bfd0496 !important; 
+} */
+/* MOGOTANIE DIV Z ZALACZNIKAMI MAILA*/
+.slds-attachments{
+      animation: pulseColor 6s infinite;
+      animation-timing-function: ease-in-out;
+}
+@keyframes pulseColor {
+    0% {
+        background-color: rgba(75, 253, 4, 0.3);
+    }
+    10% {
+        background-color: rgba(110, 200, 100, 0.3);
+    }
+    20% {
+        background-color: rgba(140, 150, 180, 0.3);
+    }
+    30% {
+        background-color: rgba(180, 2, 251, 0.3);
+    }
+    40% {
+        background-color: rgba(140, 150, 180, 0.3);
+    }
+    50% {
+        background-color: rgba(110, 200, 100, 0.3);
+    }
+    60% {
+        background-color: rgba(75, 253, 4, 0.3);
+    }
+    70% {
+        background-color: rgba(110, 200, 100, 0.3);
+    }
+    80% {
+        background-color: rgba(140, 150, 180, 0.3);
+    }
+    90% {
+        background-color: rgba(180, 2, 251, 0.3);
+    }
+    100% {
+        background-color: rgba(75, 253, 4, 0.3);
+    }
+}
+  

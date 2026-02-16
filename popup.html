@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8" />
+<title>Kolory statusów</title>
+<style>
+  body{font-family:system-ui,Segoe UI,Roboto,Arial,sans-serif;padding:14px;min-width:280px}
+  h3{margin:8px 0 6px}
+  label{display:flex;align-items:center;gap:10px;margin:6px 0;font-size:14px}
+  input[type=color]{inline-size:44px;block-size:26px;padding:0;border:none;background:#fff}
+  hr{margin:10px 0}
+  #save{margin-top:8px;padding:8px 12px;border:0;background:#2563eb;color:#fff;border-radius:6px;cursor:pointer}
+</style>
+</head>
+<body>
+  <h3>Kolory statusów</h3>
+  <label>Oczekiwanie na odpowiedź <input type="color" id="oczekiwanie"></label>
+  <label>Odpowiedź otrzymana <input type="color" id="odpowiedzOtrzymana"></label>
+  <label>Otwarta ponownie <input type="color" id="otwartaPonownie"></label>
+  <label>W trakcie realizacji <input type="color" id="wTrakcie"></label>
+  <label>Zgłoszenie przyjęte <input type="color" id="zgloszenie"></label>
+  <label>Zakończona <input type="color" id="zakonczona"></label>
+  <hr/>
+  <h3>Sekcja maila</h3>
+  <label>Odpowiedz wszystkim <input type="color" id="mailReplyAll"></label>
+  <label>Odpowiedz <input type="color" id="mailReply"></label>
+  <label>Usuń <input type="color" id="mailDelete"></label>
+  <label>Przekaż <input type="color" id="mailForward"></label>
+  <label>Napisz wiadomość email... <input type="color" id="mailWrite"></label>
+  <button id="save">Zapisz</button>
+  <script src="popup.js"></script>
+</body>
+</html>
