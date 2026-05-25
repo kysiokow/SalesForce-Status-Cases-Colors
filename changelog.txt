@@ -1,0 +1,37 @@
+Salesforce Theme
+SFTheme: Highlights case statuses in Sales Force Lightning with colors.
+It is based on CSS code and does not interfere with internal system settings or download/upload any data.
+
+## 2.2.2
+- Added custom scrollbar styling for modern browsers; scrollbar thumb color is now synchronized with the --row-bg variable.
+- Updated the High priority (exclamation mark) icon size for img[alt="High priority"][src*=/resource/Exclamation_Mark] to 24x24 px.
+
+## 2.2.1
+ - A color attribute has been added to the “New Case” section, synchronized with the row color.
+
+
+## 2.2.0
+ - The ability for users to choose colors has been added.
+ - A 30-minute timer feature has been added. It is enabled by default.
+
+## 2.0.1
+ - The plugin has been rolled back from version 2.0.0 to version 1.0.3 due to a performance issue. 
+
+## 2.0.0
+ - The option for users to choose a color has been added.
+
+## 1.0.3
+ - Added pulsing icons:email and text posts in the “All Updates” block
+
+## 1.0.2
+- Added SF icon - to be displayed on the Chrome extension bar.
+- Added colors for overwritten tables and rows
+
+## 1.0.1
+- Assigning colors to individual cases in Salesforce:
+In Progress, Reopened, Pendingng Response, Request Accepted, Response Received etc.
+- Highlights the line with the email attachment
+- Released: https://chromewebstore.google.com/detail/sales-force-theme/lcnadnnilpfaiepebnfidffnhjdmfbbc
+
+## 1.0.0
+BETA version, never released
