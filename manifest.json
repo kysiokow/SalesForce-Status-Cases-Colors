@@ -1,43 +1,30 @@
 {
-  "author": {
+   "action": {
+      "default_popup": "popup.html",
+      "default_title": "Ustaw swoje kolory"
+   },
+   "author": {
       "email": "k.kowalski78@icloud.com",
       "name": "Krzysztof Kowalski"
    },
-  "manifest_version": 3,
-  "name": "SALES Force THEME",
-  "version": "2.0.0",
-  "description": "User-configurable colors for Salesforce statuses with auto language detection (PL/FR/EN).",
-
-  "icons": {
-    "16": "logo/logo_16.png",
-    "24": "logo/logo_24.png",
-    "36": "logo/logo_36.png",
-    "48": "logo/logo_48.png",
-    "64": "logo/logo_64.png",
-    "128": "logo/logo_128.png"
-  },
-
-  "action": {
-    "default_popup": "popup.html",
-    "default_title": "Ustaw swoje kolory"
-  },
-
-  "permissions": [
-    "storage"
-  ],
-
-  "content_scripts": [
-    {
-      "matches": [
-        "https://*.lightning.force.com/*",
-        "https://*.force.com/*"
-      ],
-      "js": [
-        "contentScript.js"
-      ],
-      "css": [
-        "css/styles.css"
-      ]
-    }
-  ]
+   "content_scripts": [ {
+      "css": [ "css/styles.css" ],
+      "js": [ "contentScript.js" ],
+      "matches": [ "https://*.lightning.force.com/*", "https://*.force.com/*" ]
+   } ],
+   "description": "User-configurable colors for Salesforce statuses with auto language detection (PL/FR/EN).",
+   "icons": {
+      "128": "logo/logo_128.png",
+      "16": "logo/logo_16.png",
+      "24": "logo/logo_24.png",
+      "36": "logo/logo_36.png",
+      "48": "logo/logo_48.png",
+      "64": "logo/logo_64.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAz7K8toXLVL16cgPFzmgCvh8/CVXVbvhGv4Wm5LeflOV5xOmNkrnBtaUFUT4Wjw9ZMPfuaGzRKj7/SLIN2/ohKNtICYOynvPMB88E2rMEL6VhBPX+I6qxeFTgyjTKtZMsMRGQ/zVsd6/heFOXiWToIu5CozUc5QdOxFUH8ZbuLQkhS/DJsm+gD+RorIGMmhz/2p3mcJQI7Bo8pSo5Zd0ayCEmEMxfuci9t1wGieG17o8k0GaNjBzh5G2byC+R1J0F7aMg4WLnWjtcypMwn5I6S7M5xqqhSMELIJ+UJfq1eVPnH5RUlUlqYwTKiwAdsu12kYhDuVUYhuQKNYrU7tbnCwIDAQAB",
+   "manifest_version": 3,
+   "name": "SALES Force THEME",
+   "permissions": [ "storage" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "2.1.0"
 }

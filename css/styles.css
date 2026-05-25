@@ -1,135 +1,76 @@
-/* Base styles; user colors will override with !important in contentScript */
-span[title], a[title], button[title]{ border-radius:8px }
-
-/* kolor sekcji komentarze sprawy, to po prawej stronie*/
-li.tableRowGroup {
-  background-color: rgb(140, 251, 214);
-  font-weight: bold;
+/* 1. BAZA - zaokrąglenia dla wszystkich interaktywnych elementów */
+span[title], a[title], button[title] { 
+    border-radius: 8px; 
 }
 
-/*Nowa sprawa DOS EXPORT - karta otwarta przez 3CX
-podswietlenie elementu NOWA SPRAWADOS EXPORT */
+/* 2. KOMENTARZE - po prawej stronie (zastosowanie klasy zamiast ogólnych tagów) */
+li.tableRowGroup {
+    background-color: rgb(140, 251, 214);
+    font-weight: bold;
+}
 
+/* 3. PRZYCISK NOWA SPRAWA - wyróżnienie */
 li[data-target-selection-name="sfdc:QuickAction.Contact.New_DOS_Export_case"] button[name="Contact.New_DOS_Export_case"] {
     color: red !important;
     font-weight: bold;
-    background-color: rgba(50, 6, 243, 0.199) !important;
+    background-color: rgba(50, 6, 243, 0.2) !important;
     border-radius: 8px;
 }
 
-/* Tabele i wiersze nadpisane*/
-.slds-th__action {
-  background : rgb(187, 150, 247) !important
+/* 4. TABELE - Optymalizacja selektorów (unikaj th, td bez klas) */
+.slds-table .slds-th__action {
+    background: rgb(187, 150, 247) !important;
 }
 
-.slds-table tbody tr, .slds-table tbody th, .slds-table tbody td, th, td{
-  background: rgb(235, 247, 206) !important;
-  }
-/* Tabele i wiersze nadpisane */
-/* PULSOWANIE IKONKI ROZWIJANIA PODSPRAW*/
+.slds-table tbody tr td, 
+.slds-table tbody tr th {
+    background: rgb(235, 247, 206) !important;
+}
+
+/* 5. PULSOWANIE IKONKI ROZWIJANIA - Uproszczona animacja transformacji */
 .slds-button.slds-button_icon.slds-m-right_x-small { 
-  animation: pulse 1.2s infinite ease-in-out; 
-} 
-.slds-button.slds-button_icon.slds-m-right_x-small svg {
-   fill: currentColor; 
-  }
- @keyframes pulse { 
-  0% { 
-    transform: scale(0.75); 
-    color: #ff0000; 
-  }
-   50% {
-     transform: scale(1.5);
-      color: #043eff; 
-    } 
-    100% {
-       transform: scale(0.75); 
-       color: #ff0000; } 
-      }
+    animation: pulse 1.5s infinite ease-in-out; 
+}
 
- /*START PULSOWANIA IKONY MAIL
-  Ikona EMAIL będzie pulsować tłem i wracać do oryginalnego tła (transparent) */
+@keyframes pulse { 
+    0%, 100% { transform: scale(0.85); color: #ff0000; }
+    50% { transform: scale(1.2); color: #043eff; } 
+}
+
+/* 6. IKONA MAIL - Zoptymalizowana zmiana tła (tylko 3 klatki zamiast wielu) */
 .slds-icon-standard-email {
-    /* animacja tła */
-    animation: pulseBg 4s ease-in-out infinite;
-    /* płynniejsze przejścia kolorów w innych stanach (hover/focus itp.) */
-    transition: background-color 2s ease, fill 2s ease, color 2s ease, opacity 0.2s ease;
-
-    /* Uwaga: lightning-icon (SVG) bywa inline; poniższe pomaga, by tło było widoczne */
-    display: inline-flex;        /* by background obejmował „ramkę” ikony */
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    border-radius: 4px;          /* ładniejsze zaokrąglenie tła wokół ikony */
-    padding: 2px 4px;            /* odrobina „oddechu”, żeby tło było widoczne */
+    border-radius: 4px;
+    padding: 2px 4px;
+    animation: pulseBg 4s ease-in-out infinite;
+    will-change: background-color; /* Informuje przeglądarkę o zmianie */
 }
 
-/* Kluczowe klatki – start i koniec takie same (wraca do oryginalnego tła) */
 @keyframes pulseBg {
-    0% {
-        background-color: rgb(67, 67, 69,);                  /* ORYGINALNE TŁO */
-    }
-    50% {
-        background-color: rgb(170, 4, 253);        /* kolor pulsujący (zielony) */
-    }
-    100% {
-        background-color: rgb(67, 67, 69,);                  /* powrót do oryginału */
-    }
+    0%, 100% { background-color: rgb(67, 67, 69); }
+    50% { background-color: rgb(170, 4, 253); }
 }
-/* KONIEC PULSOWANIA IKONY MAIL*/
-/* PULSOWANIE IKONKI OPUBLIKUJ, CHATER bloku Wszystkie Aktualizacjie*/
+
+/* 7. IKONA OPUBLIKUJ - Miganie */
 .slds-icon-standard-post {
-   /* background-color: rgb(0, 200, 83) !important; Mozna dodac lub zmienic kolor ikonki*/
     animation: blink 2s infinite;
 }
-@keyframes blink {
-    0% { opacity: 1; }
-    50% { opacity: 0.15; }
-    100% { opacity: 1; }
-}
-/*KONIEC PULSOWANIA IKONKI OPUBLIKUJ*/
 
-/*wiersz z zalacznikiem → dodanie koloru do wiadomosci mail */
-/*.slds-attachments{
-  background-color: #4bfd0496 !important; 
-} */
-/* MOGOTANIE DIV Z ZALACZNIKAMI MAILA*/
-.slds-attachments{
-      animation: pulseColor 6s infinite;
-      animation-timing-function: ease-in-out;
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
 }
+
+/* 8. ZAŁĄCZNIKI - Płynna zmiana koloru (zredukowana liczba klatek dla CPU) */
+.slds-attachments {
+    animation: pulseColor 8s infinite ease-in-out;
+    will-change: background-color;
+}
+
 @keyframes pulseColor {
-    0% {
-        background-color: rgba(75, 253, 4, 0.3);
-    }
-    10% {
-        background-color: rgba(110, 200, 100, 0.3);
-    }
-    20% {
-        background-color: rgba(140, 150, 180, 0.3);
-    }
-    30% {
-        background-color: rgba(180, 2, 251, 0.3);
-    }
-    40% {
-        background-color: rgba(140, 150, 180, 0.3);
-    }
-    50% {
-        background-color: rgba(110, 200, 100, 0.3);
-    }
-    60% {
-        background-color: rgba(75, 253, 4, 0.3);
-    }
-    70% {
-        background-color: rgba(110, 200, 100, 0.3);
-    }
-    80% {
-        background-color: rgba(140, 150, 180, 0.3);
-    }
-    90% {
-        background-color: rgba(180, 2, 251, 0.3);
-    }
-    100% {
-        background-color: rgba(75, 253, 4, 0.3);
-    }
+    0%, 100% { background-color: rgba(75, 253, 4, 0.2); }
+    33% { background-color: rgba(180, 2, 251, 0.2); }
+    66% { background-color: rgba(110, 200, 100, 0.2); }
 }
-  
